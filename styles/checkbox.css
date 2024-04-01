@@ -1,0 +1,146 @@
+/* input[type="checkbox"] {
+  display: none;
+} */
+
+.with-label {
+  display: inline-block;
+  height: 32px;
+  width: 50px;
+  border: 1px solid black;
+}
+
+:root {
+  --yy--slider-height: 16px;
+  --yy--slider-width: 32px;
+  --yy--slider-vertical-offset: 2px;
+  --yy--slider-horizontal-offset: 2px;
+  --yy--slider-marker-diameter: calc(
+    var(--yy--slider-height) - var(--yy--slider-horizontal-offset) * 2
+  );
+  --yy--slider-marker-tranlate-distance: calc(
+    var(--yy--slider-width) - var(--yy--slider-marker-diameter) -
+      var(--yy--slider-horizontal-offset) * 2
+  );
+}
+
+:root {
+  --yy--onoff-height: 32px;
+  --yy--onoff-width: 48px;
+  --yy--onoff-radius: 5px;
+  --yy--onoff-vertical-offset: 4px;
+  --yy--onoff-horizontal-offset: 4px;
+
+  --yy--onoff-marker-height: calc(
+    var(--yy--onoff-height) - var(--yy--onoff-horizontal-offset) * 2
+  );
+  --yy--onoff-marker-width: calc(
+    (var(--yy--onoff-width) - var(--yy--onoff-horizontal-offset) * 2) / 2
+  );
+  --yy--onoff-marker-radius: calc(var(--yy--onoff-radius) / 2);
+  --yy--onoff-marker-tranlate-distance: calc(
+    (var(--yy--onoff-width) - var(--yy--onoff-horizontal-offset) * 2) -
+      var(--yy--onoff-marker-width)
+  );
+}
+
+.toggle-on-off {
+  position: relative;
+  display: inline-block;
+  width: var(--yy--onoff-width);
+  height: var(--yy--onoff-height);
+}
+
+/* Hide the checkbox input */
+.toggle-on-off input {
+  display: none;
+}
+
+/* Describe slider's look and position. */
+.on-off {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  transition: 0.4s;
+  border-radius: var(--yy--onoff-radius);
+}
+
+/* Describe the white ball's location 
+      and appearance in the slider. */
+.on-off:before {
+  position: absolute;
+  content: "";
+  height: var(--yy--onoff-marker-height);
+  width: var(--yy--onoff-marker-width);
+  left: var(--yy--onoff-vertical-offset);
+  bottom: var(--yy--onoff-horizontal-offset);
+  background-color: white;
+  transition: 0.4s;
+  border-radius: var(--yy--onoff-marker-radius);
+}
+
+/* Modify the slider's background color to 
+      green once the checkbox has been selected. */
+input:checked + .on-off {
+  background-color: green;
+}
+
+/* When the checkbox is checked, shift the 
+      white ball towards the right within the slider. */
+input:checked + .on-off:before {
+  transform: translateX(var(--yy--onoff-marker-tranlate-distance));
+}
+
+.toggle-slider {
+  position: relative;
+  display: inline-block;
+  width: var(--yy--slider-width);
+  height: var(--yy--slider-height);
+}
+
+/* Hide the checkbox input */
+.toggle-slider input {
+  display: none;
+}
+
+/* Describe slider's look and position. */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  transition: 0.4s;
+  border-radius: var(--yy--slider-height);
+}
+
+/* Describe the white ball's location 
+      and appearance in the slider. */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--yy--slider-marker-diameter);
+  width: var(--yy--slider-marker-diameter);
+  left: var(--yy--slider-vertical-offset);
+  bottom: var(--yy--slider-horizontal-offset);
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Modify the slider's background color to 
+      green once the checkbox has been selected. */
+input:checked + .slider {
+  background-color: green;
+}
+
+/* When the checkbox is checked, shift the 
+      white ball towards the right within the slider. */
+input:checked + .slider:before {
+  transform: translateX(var(--yy--slider-marker-tranlate-distance));
+}

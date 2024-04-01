@@ -1,5 +1,7 @@
 :root {
   --yy-border-radius: 0.375rem;
+  --yy-border-radius-1: 0.2rem;
+
   --yy-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --yy-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --yy-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
@@ -16,6 +18,7 @@ body {
   font-weight: 300;
   font-style: normal;
   font-size: 14px;
+  border-collapse: collapse;
 }
 
 *,
@@ -30,12 +33,12 @@ body {
 
 .active-marker {
   background-color: #008dda;
-  width: 36px;
+  width: 15px;
 }
 
 .passive-marker {
   background-color: #9cafaa;
-  width: 36px;
+  width: 8px;
 }
 
 .expense-red {
@@ -49,7 +52,17 @@ body {
 }
 
 .rounded {
-  border-radius: var(--yy-border-radius);
+  border-radius: var(--yy-border-radius) !important;
+}
+
+.rounded-left-1 {
+  border-top-left-radius: var(--yy-border-radius-1) !important;
+  border-bottom-left-radius: var(--yy-border-radius-1) !important;
+}
+
+.rounded-left {
+  border-top-left-radius: var(--yy-border-radius) !important;
+  border-bottom-left-radius: var(--yy-border-radius) !important;
 }
 
 .border-bottom {
@@ -61,7 +74,29 @@ body {
   border-top: var(--yy-border-width) var(--yy-border-style)
     var(--yy-border-color) !important;
 }
+
+.border-left {
+  border-left: var(--yy-border-width) var(--yy-border-style)
+    var(--yy-border-color) !important;
+}
+
+.border-right {
+  border-right: var(--yy-border-width) var(--yy-border-style)
+    var(--yy-border-color) !important;
+}
 /* margin & padding */
+
+.g-1 {
+  gap: 0.25rem !important;
+}
+
+.g-2 {
+  gap: 0.5rem !important;
+}
+
+.g-3 {
+  gap: 1rem !important;
+}
 
 .m-1 {
   margin: 0.25rem !important;
@@ -161,6 +196,18 @@ body {
   padding-right: 1rem !important;
 }
 
+.h-1 {
+  height: 0.25rem !important;
+}
+
+.h-2 {
+  height: 0.5rem !important;
+}
+
+.h-3 {
+  height: 1rem !important;
+}
+
 /* .font- */
 .font-text {
   font-family: "Roboto", sans-serif;
@@ -192,6 +239,10 @@ body {
   align-items: center !important;
 }
 
+.align-items-bottom {
+  align-items: baseline !important;
+}
+
 .justify-content-between {
   justify-content: space-between !important;
 }
@@ -207,4 +258,15 @@ body {
 .flex-col {
   display: flex;
   flex-direction: column;
+}
+
+.w-min80 {
+  min-width: 80px;
+}
+
+.circle {
+  border: var(--yy-border-width) var(--yy-border-style) var(--yy-border-color);
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
 }
