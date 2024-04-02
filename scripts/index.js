@@ -1,3 +1,15 @@
+document.querySelectorAll(".edit-menu-small").forEach((editMenuSmall) => {
+  editMenuSmall.addEventListener("click", (event) => {
+    let item = event.target;
+
+    if (item.nextElementSibling.classList.contains("hide")) {
+      item.nextElementSibling.classList.remove("hide");
+    } else {
+      item.nextElementSibling.classList.add("hide");
+    }
+  });
+});
+
 // let data = "yaman";
 // console.log(`dsadasdasdad ${data}`);
 function convertAmount(amountInKurus) {
@@ -62,15 +74,15 @@ function addItems() {
   });
 }
 
-let slider = document.querySelector(".js-checkbox");
-let card = document.querySelector(".font-text");
+// let slider = document.querySelector(".js-checkbox");
+// let card = document.querySelector(".font-text");
 
-slider.addEventListener("click", (event) => {
-  console.log(event.target.checked);
-});
-console.log(slider);
-console.log(card);
-addItems();
+// slider.addEventListener("click", (event) => {
+//   console.log(event.target.checked);
+// });
+// console.log(slider);
+// console.log(card);
+// addItems();
 
 // let oldItem = `<div class="flex-row border-top pt-2 mt-2">
 // <div class="flex ${marker} rounded mr-2"></div>

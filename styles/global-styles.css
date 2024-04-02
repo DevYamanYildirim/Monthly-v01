@@ -72,6 +72,10 @@ body {
   border: none;
 }
 
+.border {
+  border: var(--yy-border-width) var(--yy-border-style) var(--yy-border-color) !important;
+}
+
 .border-bottom {
   border-bottom: var(--yy-border-width) var(--yy-border-style)
     var(--yy-border-color) !important;
@@ -254,6 +258,12 @@ body {
   justify-content: space-between !important;
 }
 
+.hide {
+  opacity: 0;
+  width: 0;
+  /* display: none !important; */
+}
+
 .flex {
   display: flex !important;
 }
@@ -276,4 +286,9 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 8px;
+}
+
+.trans-all {
+  /* transition: opacity 0.5s ease-in-out; */
+  transition: all 1500ms, opacity 100ms;
 }
