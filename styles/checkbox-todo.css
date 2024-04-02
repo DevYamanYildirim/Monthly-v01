@@ -7,34 +7,35 @@
   position: relative;
   padding: 5px;
   display: grid;
-  grid-template-columns: 30px auto;
+  grid-template-columns: 20px 100px;
   align-items: center;
 }
-.checkbox-wrapper-11 label {
+.checkbox-wrapper-11 span {
   color: var(--text);
   position: relative;
   cursor: pointer;
   display: grid;
   align-items: center;
-  width: -webkit-fit-content;
+  /* width: -webkit-fit-content;
   width: -moz-fit-content;
-  width: fit-content;
+  width: fit-content; */
   transition: color 0.3s ease;
+  text-align: right;
 }
-.checkbox-wrapper-11 label::before,
-.checkbox-wrapper-11 label::after {
+.checkbox-wrapper-11 span::before,
+.checkbox-wrapper-11 span::after {
   content: "";
   position: absolute;
 }
-.checkbox-wrapper-11 label::before {
+.checkbox-wrapper-11 span::before {
   height: 2px;
   width: 8px;
-  left: -27px;
+  left: -15px;
   background: var(--check);
   border-radius: 2px;
   transition: background 0.3s ease;
 }
-.checkbox-wrapper-11 label:after {
+.checkbox-wrapper-11 span:after {
   height: 4px;
   width: 4px;
   top: 8px;
@@ -49,7 +50,7 @@
   width: 15px;
   outline: none;
   border: 0;
-  margin: 0 15px 0 0;
+  margin: 0 0 0 0;
   cursor: pointer;
   background: var(--background);
   display: grid;
@@ -82,17 +83,17 @@
   -webkit-animation: check-02-11 0.4s ease forwards;
   animation: check-02-11 0.4s ease forwards;
 }
-.checkbox-wrapper-11 input[type="checkbox"]:checked + label {
+.checkbox-wrapper-11 input[type="checkbox"]:checked + span {
   color: var(--disabled);
   -webkit-animation: move-11 0.3s ease 0.1s forwards;
   animation: move-11 0.3s ease 0.1s forwards;
 }
-.checkbox-wrapper-11 input[type="checkbox"]:checked + label::before {
+.checkbox-wrapper-11 input[type="checkbox"]:checked + span::before {
   background: var(--disabled);
   -webkit-animation: slice-11 0.4s ease forwards;
   animation: slice-11 0.4s ease forwards;
 }
-.checkbox-wrapper-11 input[type="checkbox"]:checked + label::after {
+.checkbox-wrapper-11 input[type="checkbox"]:checked + span::after {
   -webkit-animation: firework-11 0.5s ease forwards 0.1s;
   animation: firework-11 0.5s ease forwards 0.1s;
 }

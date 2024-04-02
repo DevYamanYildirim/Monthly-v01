@@ -41,6 +41,9 @@ body {
   width: 8px;
 }
 
+.income-green {
+  color: #508d69;
+}
 .expense-red {
   color: #b31312;
 }
@@ -63,6 +66,10 @@ body {
 .rounded-left {
   border-top-left-radius: var(--yy-border-radius) !important;
   border-bottom-left-radius: var(--yy-border-radius) !important;
+}
+
+.border-none {
+  border: none;
 }
 
 .border-bottom {
@@ -217,7 +224,7 @@ body {
 
 .font-light-sub-text {
   font-family: "Roboto", sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
   color: rgba(33, 37, 41, 0.75);
 }
